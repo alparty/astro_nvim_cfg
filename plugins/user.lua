@@ -30,4 +30,10 @@ return {
   {
     "nvim-pack/nvim-spectre"
   },
+  {
+    "svermeulen/vim-cutlass"
+  },
+  {
+    "mg979/vim-visual-multi"
+  },
 }

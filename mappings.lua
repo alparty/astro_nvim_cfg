@@ -57,6 +57,10 @@ return {
       function() require("harpoon.ui").toggle_quick_menu() end,
       desc = "Harpoon overview",
     },
+    
+    -- ["ss"] = { ":w<cr>", desc = "Save File" },
+    ["<Bs>"] = { "x", desc = "Delete" },
+
 
    -- Spectre
     ["<leader>,a"] = { '<cmd>lua require("spectre").open()<CR>', desc = "Spectre" },
@@ -93,10 +97,26 @@ return {
     ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
     ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
 
+    ["<S-u>"] = {
+        "<cmd>:call vm#commands#add_cursor_up(0, 1)<cr>", 
+        desc = "Multicursor up"
+    },
+    ["<S-l>"] = {
+      "<cmd>:call vm#commands#add_cursor_down(0, 1)<cr>",
+      desc = "Multicursor down"
+    },
   },
+  
   i = {
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
+    ["jj"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
   },
+  
+  v = {
+    ["x"] = { "ygvd", desc = "Cut" },
+    ["c"] = { "ygv", desc = "Copy + Keep selection" },
+  },
+
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
