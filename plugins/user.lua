@@ -24,16 +24,26 @@ return {
   {
     "ThePrimeagen/vim-be-good"
   },
-  {
-    "rebelot/kanagawa.nvim"
-  },
+  -- {
+  --   -- theme
+  --   "rebelot/kanagawa.nvim"
+  -- },
+  -- {
+  --   -- theme
+  --   "neanias/everforest-nvim"
+  -- },
+  -- {
+  --   "sainnhe/everforest"
+  -- },
   {
     "nvim-pack/nvim-spectre"
   },
   {
+    -- delete does not cut
     "svermeulen/vim-cutlass"
   },
   {
+    --- multi cursor
     "mg979/vim-visual-multi"
   },
 }
