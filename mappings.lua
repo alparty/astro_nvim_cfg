@@ -58,6 +58,31 @@ return {
       desc = "Harpoon overview",
     },
 
+   -- Spectre
+    ["<leader>,a"] = { '<cmd>lua require("spectre").open()<CR>', desc = "Spectre" },
+    ["<leader>,w"] = {
+      '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+      desc = "Spectre search current word",
+    },
+    ["<leader>,p"] = {
+      '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+      desc = "Spectre current file",
+    },
+    
+    -- Tabs / Buffers
+    ["sr"] = {
+        function()
+            require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
+        end,
+        desc = "Next buffer"
+    },
+    ["sl"] = {
+        function()
+            require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))
+        end,
+        desc = "Previous buffer"
+    },
+
     -- I
     ["<leader>io"] = {
       function() require("crates").show_features_popup() end,

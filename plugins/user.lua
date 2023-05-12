@@ -26,5 +26,8 @@ return {
   },
   {
     "rebelot/kanagawa.nvim"
-  }
+  },
+  {
+    "nvim-pack/nvim-spectre"
+  },
 }
