@@ -1,8 +1,5 @@
 return {
   {
-    "ThePrimeagen/vim-be-good"
-  },
-  {
     "saecki/crates.nvim",
     config = function()
       require("crates").setup()
@@ -20,5 +17,14 @@ return {
     config = function()
       require("scrollbar").setup()
     end,
+  },
+  {
+    "ThePrimeagen/harpoon"
+  },
+  {
+    "ThePrimeagen/vim-be-good"
+  },
+  {
+    "rebelot/kanagawa.nvim"
   }
 }

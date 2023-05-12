@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "kanagawa-wave",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -69,17 +69,31 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+    -- Styling
+    vim.cmd "set winblend=15"
+
+    -- Frø rust fix
+    local dap = require "dap"
+
+    local events = require "neo-tree.events"
+    events.subscribe {
+      event = events.NEO_TREE_WINDOW_AFTER_CLOSE,
+      handler = function()
+        if require("dap").session() then
+          require("dapui").open {
+            reset = true
+          }
+        end
+      end
+    }
+    dap.listeners.before.event_initialized["place-neotree-edge"] = function()
+      vim.cmd ":Neotree close"
+      vim.cmd ":Neotree reveal"
+    end
+    dap.listeners.after.event_terminated["reset-neotree"] = function()
+      vim.cmd ":Neotree focus"
+      vim.cmd "wincmd 25|"
+      vim.cmd "wincmd p"
+    end
   end,
 }
