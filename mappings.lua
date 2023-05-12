@@ -20,6 +20,15 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+    ["<C-space>"] = {
+      require("rust-tools").hover_actions.hover_actions,
+      desc = "Rust Hover Actions",
+    },
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
+  },
+  i = {
+    ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
   },
   t = {
     -- setting a mapping to false will disable it
