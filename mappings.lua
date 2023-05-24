@@ -108,8 +108,8 @@ return {
   },
   
   i = {
-    ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
-    ["jj"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
+    ["<C-s>"] = { "<esc>:w<cr>", desc = "Save File" },
+    ["kk"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
   },
   
   v = {
